@@ -1,9 +1,12 @@
 import addressData from "./contractAddress.json";
 
+export const MAINNET_CONTRACT_ADDRESS: `0x${string}` =
+  "0xE00857F9e625ec7D7272febc750C7391cfeC7f6F";
+
 export const CONTRACT_ADDRESS: `0x${string}` =
   (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`) ||
   ((addressData as { address?: string })?.address as `0x${string}`) ||
-  "0x0000000000000000000000000000000000000000";
+  MAINNET_CONTRACT_ADDRESS;
 
 export const LAUNCHLOG_ABI = [
   {
