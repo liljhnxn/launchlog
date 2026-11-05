@@ -5,11 +5,10 @@ import {
   useAccount,
   useReadContract,
   useWriteContract,
-  useWaitForTransactionReceipt,
   usePublicClient,
 } from "wagmi";
 import { CONTRACT_ADDRESS, LAUNCHLOG_ABI } from "@/config/contract";
-import { botchainTestnet } from "@/config/chain";
+import { botchainMainnet } from "@/config/chain";
 import { Project } from "@/types";
 import { Header } from "@/components/Header";
 import { StatsSection } from "@/components/StatsSection";
@@ -31,7 +30,7 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  const { address, isConnected, chain } = useAccount();
+  const { address, isConnected } = useAccount();
   const publicClient = usePublicClient();
 
   // Navigation tab state: 'explore' | 'my-projects'
@@ -62,7 +61,7 @@ export default function Home() {
     address: CONTRACT_ADDRESS,
     abi: LAUNCHLOG_ABI,
     functionName: "getAllProjects",
-    chainId: botchainTestnet.id,
+    chainId: botchainMainnet.id,
   });
 
   const { writeContractAsync } = useWriteContract();
@@ -134,7 +133,7 @@ export default function Home() {
       const hash = await executeTx();
       setBanner({
         type: "info",
-        message: `Transaction broadcasted! Confirming on Botchain...`,
+        message: `Transaction broadcasted! Confirming on Botchain Mainnet...`,
         txHash: hash,
       });
 
@@ -252,12 +251,12 @@ export default function Home() {
                 <p className="font-medium text-white">{banner.message}</p>
                 {banner.txHash && (
                   <a
-                    href={`https://scan.bohr.life/tx/${banner.txHash}`}
+                    href={`https://scan.botchain.ai/tx/${banner.txHash}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-1 text-xs underline mt-1 hover:opacity-80"
                   >
-                    <span>View on BohrScan</span>
+                    <span>View on BotchainScan</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
@@ -278,15 +277,15 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-accent-green/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent-purple-subtle border border-accent-purple/20 text-accent-purple-light text-xs font-medium mb-4">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent-green-subtle border border-accent-green/30 text-accent-green-light text-xs font-medium mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Decentralized Builder Showcase</span>
+              <span>Botchain Mainnet Showcase</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Every launch deserves a record.
             </h1>
             <p className="text-sm sm:text-base text-charcoal-300 mt-3 leading-relaxed">
-              LaunchLog is an on-chain registry for builders and creators. Connect your MetaMask wallet, record your launches directly on the Botchain Testnet, and share them with the ecosystem.
+              LaunchLog is the official on-chain registry for builders and creators. Connect your MetaMask wallet, record your launches directly on the Botchain Mainnet, and share them with the entire ecosystem.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -375,7 +374,7 @@ export default function Home() {
         {isLoadingProjects ? (
           <div className="py-20 flex flex-col items-center justify-center space-y-3">
             <Loader2 className="w-8 h-8 animate-spin text-accent-purple" />
-            <p className="text-sm text-charcoal-400">Loading project records from Botchain...</p>
+            <p className="text-sm text-charcoal-400">Loading project records from Botchain Mainnet...</p>
           </div>
         ) : activeTab === "my-projects" && !isConnected ? (
           /* Disconnected State for My Projects */
@@ -386,7 +385,7 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-bold text-white">Connect Your Wallet</h4>
               <p className="text-xs text-charcoal-400 mt-1">
-                Please connect your MetaMask wallet to view and manage your published projects.
+                Please connect your MetaMask wallet to view and manage your published projects on Botchain Mainnet.
               </p>
             </div>
           </div>
@@ -404,8 +403,8 @@ export default function Home() {
                 {searchQuery
                   ? "Try adjusting your search criteria or clearing filters."
                   : activeTab === "my-projects"
-                  ? "You haven't published any projects yet. Launch your first project today!"
-                  : "Be the pioneer builder and record the first launch on Botchain!"}
+                  ? "You haven't published any projects yet. Launch your first project today on Mainnet!"
+                  : "Be the pioneer builder and record the first launch on Botchain Mainnet!"}
               </p>
             </div>
             {isConnected && !searchQuery && (
@@ -441,10 +440,10 @@ export default function Home() {
           <div className="flex items-center space-x-4">
             <span className="flex items-center space-x-1.5">
               <span className="w-2 h-2 rounded-full bg-accent-green" />
-              <span>Botchain Testnet (Chain ID: 968)</span>
+              <span>Botchain Mainnet (Chain ID: 677)</span>
             </span>
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-charcoal-300 transition-colors"
@@ -493,4 +492,3 @@ export default function Home() {
     </div>
   );
 }
-

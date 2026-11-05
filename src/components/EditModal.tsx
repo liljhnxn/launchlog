@@ -110,7 +110,7 @@ export function EditModal({
           </h3>
         </div>
         <p className="text-xs text-charcoal-400 mb-5 ml-10">
-          Update project parameters on Botchain Testnet.
+          Update project parameters on Botchain Mainnet.
         </p>
 
         {/* Errors */}

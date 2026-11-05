@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { truncateAddress } from "@/utils/format";
-import { botchainTestnet } from "@/config/chain";
+import { botchainMainnet } from "@/config/chain";
 import { Rocket, Wallet, LogOut, ChevronDown, AlertCircle, Plus } from "lucide-react";
 
 interface HeaderProps {
@@ -17,10 +17,9 @@ export function Header({ onOpenPublish }: HeaderProps) {
   const { switchChain, isPending: isSwitching } = useSwitchChain();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const isWrongNetwork = isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chain?.id !== botchainMainnet.id;
 
   const handleConnect = () => {
-    // Prefer injected (MetaMask)
     const injectedConnector =
       connectors.find((c) => c.id === "injected" || c.name.toLowerCase().includes("metamask")) ||
       connectors[0];
@@ -42,8 +41,8 @@ export function Header({ onOpenPublish }: HeaderProps) {
               <span className="text-xl font-bold tracking-tight text-white">
                 Launch<span className="text-accent-purple-light">Log</span>
               </span>
-              <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-purple-subtle text-accent-purple-light border border-accent-purple/20">
-                Botchain
+              <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green-subtle text-accent-green-light border border-accent-green/30">
+                Mainnet
               </span>
             </div>
             <p className="text-xs text-charcoal-400 font-medium hidden sm:block">
@@ -68,7 +67,7 @@ export function Header({ onOpenPublish }: HeaderProps) {
           {/* Network Switch Warning */}
           {isWrongNetwork && (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               disabled={isSwitching}
               className="inline-flex items-center space-x-2 px-3 py-2 rounded-xl text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-all"
             >
@@ -104,12 +103,12 @@ export function Header({ onOpenPublish }: HeaderProps) {
                     <p className="text-xs text-charcoal-400">Connected Wallet</p>
                     <p className="font-mono text-xs text-white truncate mt-0.5">{address}</p>
                     <a
-                      href={`https://scan.bohr.life/address/${address}`}
+                      href={`https://scan.botchain.ai/address/${address}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[11px] text-accent-purple-light hover:underline inline-block mt-1"
                     >
-                      View on BohrScan ↗
+                      View on BotchainScan ↗
                     </a>
                   </div>
                   <button
@@ -131,4 +130,3 @@ export function Header({ onOpenPublish }: HeaderProps) {
     </header>
   );
 }
-

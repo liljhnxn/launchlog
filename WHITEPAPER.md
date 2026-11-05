@@ -1,6 +1,6 @@
 # LaunchLog Whitepaper
 **Version 1.0 — November 2026**  
-*Decentralized Project Registry & Builder Showcase on Botchain*
+*Decentralized Project Registry & Builder Showcase on Botchain Mainnet*
 
 ---
 
@@ -8,7 +8,7 @@
 
 In the modern Web3 ecosystem, hundreds of protocols, dApps, tools, and smart contracts are deployed daily. However, discovery, validation, and verifiable provenance for new projects remain fragmented across centralized forums, private databases, and transient social media feeds. When a builder deploys a project, their deployment history and project metadata are often lost in network noise.
 
-**LaunchLog** is an open, immutable, decentralized project showcase designed to provide permanent on-chain records for every launch. Built natively on **Botchain**, LaunchLog enables developers to register project metadata directly to smart contracts, retain cryptographic ownership over their listings, and offer the ecosystem a transparent, verifiable registry of builder activity.
+**LaunchLog** is an open, immutable, decentralized project showcase designed to provide permanent on-chain records for every launch. Built natively on **Botchain Mainnet**, LaunchLog enables developers to register project metadata directly to smart contracts, retain cryptographic ownership over their listings, and offer the ecosystem a transparent, verifiable registry of builder activity.
 
 > **Tagline:** *Every launch deserves a record.*
 
@@ -23,14 +23,14 @@ Traditional project directories (Product Hunt, directory aggregators, Web2 regis
 - **Lack of cryptographic provenance:** Anyone can claim ownership of a project URL or repository without proof of cryptographic authority.
 
 ### 2.2 Lack of Verifiable Builder Footprints in Emerging Networks
-For emerging Layer-1 and Layer-2 ecosystems like Botchain, tracking real ecosystem momentum is difficult without a native, verifiable registry where every launch is provable on-chain.
+For emerging ecosystems like Botchain, tracking real ecosystem momentum is difficult without a native, verifiable registry where every launch is provable on-chain.
 
 ---
 
 ## 3. The LaunchLog Solution
 
 LaunchLog provides a serverless, database-free architecture where:
-1. **Records are Immutable and On-Chain:** Project IDs, names, summaries, links, timestamps, and creator addresses live directly inside the `LaunchLog.sol` smart contract on Botchain Testnet (`Chain ID: 968`).
+1. **Records are Immutable and On-Chain:** Project IDs, names, summaries, links, timestamps, and creator addresses live directly inside the `LaunchLog.sol` smart contract on Botchain Mainnet (`Chain ID: 677`).
 2. **Cryptographic Identity & Ownership:** Project listings are permanently tied to the publisher’s wallet address (`msg.sender`). Only the creator has permission to update metadata or deactivate the listing.
 3. **Public Good Architecture:** No token gates, platform fees, or proprietary lock-ins. LaunchLog serves as public infrastructure for all Botchain builders.
 
@@ -48,12 +48,12 @@ LaunchLog provides a serverless, database-free architecture where:
                                     |
                                     v
   +------------------------------------------------------------------+
-  |                    Botchain Testnet (Chain ID 968)               |
-  |                        RPC: https://rpc.bohr.life                |
+  |                    Botchain Mainnet (Chain ID 677)               |
+  |                        RPC: https://rpc.botchain.ai              |
   |                                                                  |
   |       +--------------------------------------------------+       |
   |       |               LaunchLog.sol Contract             |       |
-  |       |   Address: 0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924   |       |
+  |       |   Address: 0xE00857F9e625ec7D7272febc750C7391cfeC7f6F   |       |
   |       +--------------------------------------------------+       |
   |          - createProject(...)                                    |
   |          - updateProject(...)                                    |
@@ -105,7 +105,7 @@ To maintain low gas costs and prevent state bloat:
 ### Phase 1: Core Deployment (Completed)
 - [x] Solidity smart contract architecture and gas optimization.
 - [x] 15/15 unit tests passing with Hardhat.
-- [x] Contract deployed and verified on BohrScan (`0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924`).
+- [x] Contract deployed and verified on BotchainScan Mainnet (`0xE00857F9e625ec7D7272febc750C7391cfeC7f6F`).
 - [x] Responsive Next.js Web3 frontend deployed.
 
 ### Phase 2: Community & Ecosystem Growth
@@ -123,5 +123,5 @@ To maintain low gas costs and prevent state bloat:
 
 LaunchLog bridges the gap between smart contract deployment and community discovery. By anchoring project identity directly to Botchain, LaunchLog ensures that every builder’s contribution is recorded transparently and permanently on-chain.
 
-*Contract Address:* [`0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924`](https://scan.bohr.life/address/0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924#code)  
+*Contract Address:* [`0xE00857F9e625ec7D7272febc750C7391cfeC7f6F`](https://scan.botchain.ai/address/0xE00857F9e625ec7D7272febc750C7391cfeC7f6F#code)  
 *GitHub Repository:* [https://github.com/liljhnxn/launchlog](https://github.com/liljhnxn/launchlog)

@@ -44,7 +44,7 @@ export function ProjectCard({
               </span>
               <span className="text-charcoal-600">•</span>
               <a
-                href={`https://scan.bohr.life/address/${project.creator}`}
+                href={`https://scan.botchain.ai/address/${project.creator}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Creator: ${project.creator}`}
@@ -110,4 +110,3 @@ export function ProjectCard({
     </div>
   );
 }
-

@@ -102,7 +102,7 @@ export function PublishModal({
           </h3>
         </div>
         <p className="text-xs text-charcoal-400 mb-5 ml-10">
-          Record your project on the Botchain Testnet for the world to discover.
+          Record your project on the Botchain Mainnet for the world to discover.
         </p>
 
         {/* Notice on public on-chain data */}

@@ -2,20 +2,20 @@
 
 > **Every launch deserves a record.**
 
-LaunchLog is a decentralized project showcase and registry where developers and creators can record, showcase, and manage their builds on-chain. Built for the **Botchain Testnet**, LaunchLog lets users connect their MetaMask wallets, record project details with smart contract validation, explore community projects, and manage their listings directly through an intuitive, minimal Web3 interface.
+LaunchLog is a decentralized project showcase and registry where developers and creators can record, showcase, and manage their builds on-chain. Built natively for **Botchain Mainnet**, LaunchLog lets users connect their MetaMask wallets, record project details with smart contract validation, explore community projects, and manage their listings directly through an intuitive, minimal Web3 interface.
 
 ---
 
 ## 🚀 Features
 
-- **On-Chain Project Registry**: Every project is permanently and publicly recorded on Botchain Testnet.
+- **On-Chain Project Registry**: Every project is permanently and publicly recorded on Botchain Mainnet.
 - **Smart Contract Validations**:
   - Project name (1–50 characters, non-empty)
   - Short description (1–200 characters, non-empty)
   - Project website URL (1–200 characters, validated `http://` or `https://`)
 - **Creator Ownership & Permissions**: Only the creator wallet address has permission to edit or delete their listing.
 - **Real-Time On-Chain Statistics**: Tracks total projects, unique builder wallets, and user-specific project counts directly from the contract.
-- **MetaMask Web3 Integration**: Seamless wallet connection, network validation (Chain ID `968`), and on-chain transaction lifecycle management.
+- **MetaMask Web3 Integration**: Seamless wallet connection, network validation (Chain ID `677`), and on-chain transaction lifecycle management.
 - **Modern Minimal UI**: Built with a sleek dark charcoal aesthetic, muted purple and green accents, clean rounded cards, and responsive layout.
 
 ---
@@ -33,11 +33,13 @@ LaunchLog is a decentralized project showcase and registry where developers and 
 
 ## 🌐 Blockchain Network Details
 
-- **Network**: Botchain Testnet
-- **Chain ID**: `968`
-- **RPC URL**: `https://rpc.bohr.life`
-- **Native Currency**: `BOHR` (18 Decimals)
-- **Block Explorer**: [https://scan.bohr.life](https://scan.bohr.life)
+- **Network**: Botchain Mainnet
+- **Chain ID**: `677`
+- **RPC URL**: `https://rpc.botchain.ai`
+- **Native Currency**: `BOT` (18 Decimals)
+- **Total Supply**: 150 Million BOT
+- **Block Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Deployed Mainnet Contract**: [`0xE00857F9e625ec7D7272febc750C7391cfeC7f6F`](https://scan.botchain.ai/address/0xE00857F9e625ec7D7272febc750C7391cfeC7f6F#code)
 
 ---
 
@@ -87,10 +89,12 @@ cp .env.example .env.local
 
 Fill in the required values:
 ```env
-RPC_URL=https://rpc.bohr.life
+RPC_URL=https://rpc.botchain.ai
 PRIVATE_KEY=your_deployer_wallet_private_key
-NEXT_PUBLIC_CONTRACT_ADDRESS=your_deployed_contract_address
-NEXT_PUBLIC_CHAIN_ID=968
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xE00857F9e625ec7D7272febc750C7391cfeC7f6F
+NEXT_PUBLIC_CHAIN_ID=677
+NEXT_PUBLIC_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_BLOCK_EXPLORER=https://scan.botchain.ai
 ```
 
 ---
@@ -102,29 +106,15 @@ Run the comprehensive unit test suite:
 npx hardhat test
 ```
 
-Tests cover:
-- Project creation with valid parameters & events
-- Input validation (empty name, description, website)
-- Maximum length limits (50-char name, 200-char description, 200-char website)
-- Ownership protection on updates and deletes
-- Querying active projects and filtering deactivated listings
-
 ---
 
-## 🚀 Deploying to Botchain Testnet
+## 🚀 Deploying to Botchain Mainnet
 
-1. Ensure your deployer wallet has testnet `BOHR` funds.
-2. Set `PRIVATE_KEY` in your `.env` or `.env.local`.
-3. Run the deployment script:
 ```bash
-npm run deploy
-```
-or
-```bash
-npx hardhat run scripts/deploy.ts --network botchain
+npm run deploy:mainnet
 ```
 
-The script will deploy the contract, log the contract address, and automatically export the deployment details to `src/config/contractAddress.json`.
+The script deploys the contract to Botchain Mainnet with optimized gas, logs the contract address, and automatically exports the deployment details to `src/config/contractAddress.json`.
 
 ---
 
@@ -137,26 +127,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To produce an optimized production build:
-```bash
-npm run build
-npm start
-```
-
 ---
 
-## 🦊 Adding Botchain Testnet to MetaMask
+## 🦊 Adding Botchain Mainnet to MetaMask
 
-If MetaMask does not automatically prompt to add the network:
 1. Open **MetaMask** -> **Networks** -> **Add Network Manually**.
-2. **Network Name**: `Botchain Testnet`
-3. **New RPC URL**: `https://rpc.bohr.life`
-4. **Chain ID**: `968`
-5. **Currency Symbol**: `BOHR`
-6. **Block Explorer URL**: `https://scan.bohr.life`
+2. **Network Name**: `Botchain Mainnet`
+3. **New RPC URL**: `https://rpc.botchain.ai`
+4. **Chain ID**: `677`
+5. **Currency Symbol**: `BOT`
+6. **Block Explorer URL**: `https://scan.botchain.ai`
 
 ---
 
 ## 📄 License
 MIT License
-

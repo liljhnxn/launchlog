@@ -2,15 +2,15 @@
 
 > **Tagline:** Every launch deserves a record.  
 > **Ecosystem:** Botchain  
-> **Network:** Botchain Testnet (Chain ID: 968)  
-> **Contract:** `0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924`  
+> **Network:** Botchain Mainnet (Chain ID: 677)  
+> **Contract:** `0xE00857F9e625ec7D7272febc750C7391cfeC7f6F`  
 > **GitHub:** [https://github.com/liljhnxn/launchlog](https://github.com/liljhnxn/launchlog)
 
 ---
 
 ## Slide 1: Title & Vision
 * **Title:** LaunchLog
-* **Subtitle:** The Decentralized Project Registry on Botchain
+* **Subtitle:** The Decentralized Project Registry on Botchain Mainnet
 * **Vision:** A permanent, immutable showcase where every builder's launch is recorded on-chain.
 
 ---
@@ -24,14 +24,14 @@
 
 ## Slide 3: The Solution
 * **LaunchLog:** An on-chain registry where builders record project details directly to smart contracts.
-* **100% On-Chain:** Project ID, Name, Description, Website, Creator Address, and Timestamp live on Botchain.
+* **100% On-Chain:** Project ID, Name, Description, Website, Creator Address, and Timestamp live on Botchain Mainnet.
 * **Cryptographic Ownership:** Only the wallet that launched the project can modify or delete the record.
 * **Open & Permissionless:** Zero fees, zero middleman approval delays.
 
 ---
 
 ## Slide 4: Product Experience & Features
-* **MetaMask Web3 Connection:** Instant wallet onboarding and automatic network switching to Botchain (Chain ID: 968).
+* **MetaMask Web3 Connection:** Instant wallet onboarding and automatic network switching to Botchain Mainnet (Chain ID: 677).
 * **Live Ecosystem Stats:** Real-time metrics tracking total projects, unique builder addresses, and user-published builds.
 * **Explore Directory:** Instant search by project name, description, or creator address.
 * **Creator Management ("My Projects"):** One-click editing and deletion modal for verified owners.
@@ -48,9 +48,10 @@
 ---
 
 ## Slide 6: Current Traction & Milestones
-* ✅ **Smart Contract Deployed & Verified:** `0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924` on BohrScan.
+* ✅ **Smart Contract Deployed & Verified on Mainnet:** `0xE00857F9e625ec7D7272febc750C7391cfeC7f6F` on BotchainScan.
 * ✅ **15/15 Automated Tests Passing:** Validating security boundaries, ownership rights, and input limits.
 * ✅ **Production Build Verified:** High-performance Next.js application with zero webpack/type errors.
+* ✅ **Ultra Low Gas Deployment:** Deployed for only ~0.028 BOT total gas fee.
 * ✅ **Open Source Repository:** Committed and pushed to GitHub ([github.com/liljhnxn/launchlog](https://github.com/liljhnxn/launchlog)).
 
 ---
@@ -64,7 +65,7 @@
 
 ## Slide 8: Roadmap
 * **Q4 2026:**
-  - LaunchLog Mainnet deployment upon Botchain Mainnet rollout.
+  - LaunchLog Mainnet live.
   - Ecosystem directory & explorer integration.
 * **Q1 2027:**
   - On-chain community upvoting and builder attestations.
@@ -82,6 +83,6 @@
 ---
 
 ## Slide 10: Contact & Links
-* **Live Contract:** [https://scan.bohr.life/address/0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924#code](https://scan.bohr.life/address/0xd7da5d542f97b1b4394d3EfAcfc1c77c2BC5d924#code)
+* **Live Mainnet Contract:** [https://scan.botchain.ai/address/0xE00857F9e625ec7D7272febc750C7391cfeC7f6F#code](https://scan.botchain.ai/address/0xE00857F9e625ec7D7272febc750C7391cfeC7f6F#code)
 * **GitHub Repository:** [https://github.com/liljhnxn/launchlog](https://github.com/liljhnxn/launchlog)
 * **Whitepaper:** `WHITEPAPER.md` in repository
