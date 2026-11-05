@@ -31,17 +31,10 @@ const config: HardhatUserConfig = {
       chainId: 677,
       accounts: privateKey && privateKey !== "0x" ? [privateKey] : [],
     },
-    // Retain testnet for fallback reference
-    botchainTestnet: {
-      url: "https://rpc.bohr.life",
-      chainId: 968,
-      accounts: privateKey && privateKey !== "0x" ? [privateKey] : [],
-    },
   },
   etherscan: {
     apiKey: {
       botchainMainnet: "empty",
-      botchainTestnet: "empty",
     },
     customChains: [
       {
@@ -50,14 +43,6 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://scan.botchain.ai/api",
           browserURL: "https://scan.botchain.ai",
-        },
-      },
-      {
-        network: "botchainTestnet",
-        chainId: 968,
-        urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
         },
       },
     ],

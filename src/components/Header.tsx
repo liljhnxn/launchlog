@@ -4,7 +4,17 @@ import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { truncateAddress } from "@/utils/format";
 import { botchainMainnet } from "@/config/chain";
-import { Rocket, Wallet, LogOut, ChevronDown, AlertCircle, Plus } from "lucide-react";
+import {
+  Rocket,
+  Wallet,
+  LogOut,
+  ChevronDown,
+  AlertCircle,
+  Plus,
+  ExternalLink,
+  Globe,
+  Compass,
+} from "lucide-react";
 
 interface HeaderProps {
   onOpenPublish: () => void;
@@ -30,25 +40,53 @@ export function Header({ onOpenPublish }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-charcoal-800 bg-charcoal-950/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand */}
-        <div className="flex items-center space-x-3.5">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-purple to-accent-purple-dark flex items-center justify-center shadow-glow-purple">
-            <Rocket className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold tracking-tight text-white">
-                Launch<span className="text-accent-purple-light">Log</span>
-              </span>
-              <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green-subtle text-accent-green-light border border-accent-green/30">
-                Mainnet
-              </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        {/* Brand & Ecosystem Link */}
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-purple to-accent-purple-dark flex items-center justify-center shadow-glow-purple">
+              <Rocket className="w-5 h-5 text-white" />
             </div>
-            <p className="text-xs text-charcoal-400 font-medium hidden sm:block">
-              Every launch deserves a record.
-            </p>
+            <div>
+              <div className="flex items-center space-x-2">
+                <span className="text-xl font-bold tracking-tight text-white">
+                  Launch<span className="text-accent-purple-light">Log</span>
+                </span>
+                <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green-subtle text-accent-green-light border border-accent-green/30">
+                  BOT Chain Mainnet
+                </span>
+              </div>
+              <p className="text-xs text-charcoal-400 font-medium hidden sm:block">
+                Every launch deserves a record.
+              </p>
+            </div>
           </div>
+
+          {/* Quick Ecosystem Navigation Links */}
+          <nav className="hidden md:flex items-center space-x-3 text-xs font-medium text-charcoal-300 pl-4 border-l border-charcoal-800">
+            <a
+              href="https://botchain.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-charcoal-850 transition-colors"
+              title="Official BOT Chain Website"
+            >
+              <Globe className="w-3.5 h-3.5 text-accent-purple-light" />
+              <span>botchain.ai</span>
+              <ExternalLink className="w-2.5 h-2.5 text-charcoal-500" />
+            </a>
+            <a
+              href="https://scan.botchain.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg hover:text-white hover:bg-charcoal-850 transition-colors"
+              title="Official BOT Chain Block Explorer"
+            >
+              <Compass className="w-3.5 h-3.5 text-accent-green-light" />
+              <span>Explorer</span>
+              <ExternalLink className="w-2.5 h-2.5 text-charcoal-500" />
+            </a>
+          </nav>
         </div>
 
         {/* Action Controls */}
@@ -72,7 +110,7 @@ export function Header({ onOpenPublish }: HeaderProps) {
               className="inline-flex items-center space-x-2 px-3 py-2 rounded-xl text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-all"
             >
               <AlertCircle className="w-4 h-4 text-amber-400" />
-              <span>{isSwitching ? "Switching..." : "Switch to Botchain"}</span>
+              <span>{isSwitching ? "Switching..." : "Switch to BOT Chain"}</span>
             </button>
           )}
 

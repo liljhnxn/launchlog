@@ -22,8 +22,6 @@ export const botchainMainnet = defineChain({
       url: "https://scan.botchain.ai",
     },
   },
-  testnet: false,
 });
 
-// Default active chain
 export const botchain = botchainMainnet;
